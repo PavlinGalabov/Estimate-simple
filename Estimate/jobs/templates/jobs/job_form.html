@@ -1,0 +1,13 @@
+{{ form.as_p }}
+
+<h3>Operations</h3>
+{{ operation_formset.management_form }}
+<table>
+  {% for form in operation_formset %}
+    <tr>
+      <td>{{ form.master_operation }}</td>
+      <td>{{ form.sequence }}</td>
+      <td>{% if form.instance.pk %}{{ form.DELETE }} Delete{% endif %}</td>
+    </tr>
+  {% endfor %}
+</table>
